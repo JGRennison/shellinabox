@@ -2,3 +2,7 @@
 *.lo
 *~
 .libs
+demo/demo.js
+demo/vt100.js
+shellinabox/shell_in_a_box.js
+shellinabox/vt100.js
