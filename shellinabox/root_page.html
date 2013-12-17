@@ -2,6 +2,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xml:lang="en" lang="en">
   <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <!--
     ShellInABox - Make command line applications available as AJAX web applications
     Copyright (C) 2008-2010 Markus Gutschke markus@shellinabox.com
@@ -76,7 +77,7 @@
         }
       })();
     --></script>
-    <link rel="stylesheet" href="styles.css" type="text/css">
+    <link rel="stylesheet" href="styles.css" type="text/css" />
     <style type="text/css">
       body {
         margin: 0px;
@@ -100,14 +101,14 @@
         }
       })();
     --></script>
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
     <script type="text/javascript" src="ShellInABox.js"></script>
   </head>
   <!-- Load ShellInABox from a timer as Konqueror sometimes fails to
        correctly deal with the enclosing frameset (if any), if we do not
        do this
    -->
-  <body onload="setTimeout('new ShellInABox()', 100)"
-        scroll="no"><noscript>JavaScript
-    must be enabled for ShellInABox</noscript></body>
+  <body onload="setTimeout('new ShellInABox()', 100)">
+    <noscript>JavaScript must be enabled for ShellInABox</noscript>
+  </body>
 </html>
