@@ -137,9 +137,13 @@
                               background-color: #000000; }
 
 #vt100 #kbd_button {
-  float:                left;
+  display:              block;
   position:             fixed;
-  z-index:              0;
+  top:                  5px;
+  right:                21px;
+  width:                40px;
+  height:               18px;
+  background:           url("keyboard.png") no-repeat;
   visibility:           hidden;
 }
 

@@ -748,7 +748,7 @@ VT100.prototype.initializeKeyBindings = function(elem) {
 
 VT100.prototype.initializeKeyboardButton = function() {
   // Configure mouse event handlers for button that displays/hides keyboard
-  this.addListener(this.keyboardImage, 'click',
+  this.addListener(this.keyboardButton, 'click',
     function(vt100) { return function(e) {
       if (vt100.keyboard.style.display != '') {
         if (vt100.reconnectBtn.style.visibility != '') {
@@ -763,7 +763,7 @@ VT100.prototype.initializeKeyboardButton = function() {
 
   // Enable button that displays keyboard
   if (this.softKeyboard) {
-    this.keyboardImage.style.visibility = 'visible';
+    this.keyboardButton.style.visibility = 'visible';
   }
 };
 
@@ -829,7 +829,6 @@ VT100.prototype.initializeElements = function(container) {
       !this.getChildById(this.container, 'menu')        ||
       !this.getChildById(this.container, 'keyboard')    ||
       !this.getChildById(this.container, 'kbd_button')  ||
-      !this.getChildById(this.container, 'kbd_img')     ||
       !this.getChildById(this.container, 'layout')      ||
       !this.getChildById(this.container, 'scrollable')  ||
       !this.getChildById(this.container, 'console')     ||
@@ -876,11 +875,6 @@ VT100.prototype.initializeElements = function(container) {
                        '<div id="keyboard" unselectable="on">' +
                        '</div>' +
                        '<div id="scrollable">' +
-                         '<table id="kbd_button">' +
-                           '<tr><td width="100%">&nbsp;</td>' +
-                           '<td><img id="kbd_img" src="keyboard.png" /></td>' +
-                           '<td>&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>' +
-                         '</table>' +
                          '<pre id="lineheight">&nbsp;</pre>' +
                          '<pre id="console">' +
                            '<pre></pre>' +
@@ -890,6 +884,7 @@ VT100.prototype.initializeElements = function(container) {
                          '<div id="padding"></div>' +
                          '<pre id="cursor">&nbsp;</pre>' +
                        '</div>' +
+                       '<a id="kbd_button" href="#"></a>' +
                        '<div class="hidden">' +
                          '<div id="usercss"></div>' +
                          '<pre><div><span id="space"></span></div></pre>' +
@@ -923,7 +918,7 @@ VT100.prototype.initializeElements = function(container) {
   this.curSizeBox              = this.getChildById(this.container, 'cursize');
   this.menu                    = this.getChildById(this.container, 'menu');
   this.keyboard                = this.getChildById(this.container, 'keyboard');
-  this.keyboardImage           = this.getChildById(this.container, 'kbd_img');
+  this.keyboardButton          = this.getChildById(this.container, 'kbd_button');
   this.layout                  = this.getChildById(this.container, 'layout');
   this.scrollable              = this.getChildById(this.container,
                                                                  'scrollable');
@@ -2341,7 +2336,7 @@ VT100.prototype.toggleBell = function() {
 
 VT100.prototype.toggleSoftKeyboard = function() {
   this.softKeyboard = !this.softKeyboard;
-  this.keyboardImage.style.visibility = this.softKeyboard ? 'visible' : '';
+  this.keyboardButton.style.visibility = this.softKeyboard ? 'visible' : '';
 };
 
 VT100.prototype.toggleDisableAlt = function() {
