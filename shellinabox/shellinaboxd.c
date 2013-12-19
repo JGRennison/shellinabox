@@ -90,6 +90,7 @@
 #include "shellinabox/enabled.h"
 #include "shellinabox/favicon.h"
 #include "shellinabox/keyboard.h"
+#include "shellinabox/keyboard_inverted.h"
 #include "shellinabox/keyboard-layout.h"
 #include "shellinabox/print-styles.h"
 #include "shellinabox/root_page.h"
@@ -658,6 +659,10 @@ static int shellInABoxHttpHandler(HttpConnection *http, void *arg,
     // Serve the keyboard icon
     serveStaticFile(http, "image/png", keyboardStart,
                     keyboardStart + keyboardSize - 1);
+  } else if (pathInfoLength == 21 && !memcmp(pathInfo, "keyboard_inverted.png", 21)) {
+    // Serve the inverted keyboard icon
+    serveStaticFile(http, "image/png", keyboardInvertedStart,
+                    keyboardInvertedStart + keyboardInvertedSize - 1);
   } else if (pathInfoLength == 14 && !memcmp(pathInfo, "ShellInABox.js", 14)) {
     // Serve both vt100.js and shell_in_a_box.js in the same transaction.
     // Also, indicate to the client whether the server is SSL enabled.

@@ -4,6 +4,7 @@ config.h
 config.log
 config.status
 demo/demo.js
+demo/keyboard_inverted.png
 demo/vt100.js
 .deps
 libhttp.la
@@ -21,6 +22,7 @@ shellinaboxd.ps
 shellinabox/enabled.h
 shellinabox/favicon.h
 shellinabox/keyboard.h
+shellinabox/keyboard_inverted.h
 shellinabox/keyboard-layout.h
 shellinabox/print-styles.h
 shellinabox/root_page.h
