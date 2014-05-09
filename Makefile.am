@@ -31,6 +31,7 @@ EXTRA_DIST           = INSTALL.Debian                                         \
                        demo/enabled.gif                                       \
                        demo/keyboard.html                                     \
                        demo/keyboard.png                                      \
+                       demo/keyboard_inverted.png                             \
                        demo/styles.css                                        \
                        demo/print-styles.css                                  \
                        demo/vt100.js                                          \
@@ -106,6 +107,7 @@ shellinaboxd_SOURCES = shellinabox/shellinaboxd.c                             \
                        shellinabox/enabled.gif                                \
                        shellinabox/favicon.ico                                \
                        shellinabox/keyboard.png                               \
+                       shellinabox/keyboard_inverted.png                      \
                        shellinabox/keyboard-layout.html                       \
                        shellinabox/beep.wav                                   \
                        config.h
@@ -114,6 +116,7 @@ BUILT_SOURCES        = shellinabox/beep.h                                     \
                        shellinabox/enabled.h                                  \
                        shellinabox/favicon.h                                  \
                        shellinabox/keyboard.h                                 \
+                       shellinabox/keyboard_inverted.h                        \
                        shellinabox/keyboard-layout.h                          \
                        shellinabox/print-styles.h                             \
                        shellinabox/root_page.h                                \
@@ -150,6 +153,7 @@ ${top_srcdir}/demo/demo.js: ${top_srcdir}/demo/beep.wav                       \
                             ${top_srcdir}/demo/favicon.ico                    \
                             ${top_srcdir}/demo/keyboard.html                  \
                             ${top_srcdir}/demo/keyboard.png                   \
+                            ${top_srcdir}/demo/keyboard_inverted.png          \
                             ${top_srcdir}/demo/styles.css                     \
                             ${top_srcdir}/demo/print-styles.css               \
                             ${top_srcdir}/demo/vt100.js                       \
@@ -175,6 +179,10 @@ ${top_srcdir}/demo/keyboard.html: ${top_srcdir}/shellinabox/keyboard-layout.html
 	ln "$?" "$@"
 
 ${top_srcdir}/demo/keyboard.png: ${top_srcdir}/shellinabox/keyboard.png
+	@rm -f "$@"
+	ln "$?" "$@"
+
+${top_srcdir}/demo/keyboard_inverted.png: ${top_srcdir}/shellinabox/keyboard_inverted.png
 	@rm -f "$@"
 	ln "$?" "$@"
 
@@ -250,6 +258,7 @@ clean-local:
 	        shellinabox/enabled.h       				      \
 	        shellinabox/favicon.h       				      \
 	        shellinabox/keyboard.h      				      \
+	        shellinabox/keyboard_inverted.h				      \
 	        shellinabox/keyboard-layout.h				      \
 	        shellinabox/print-styles.h  				      \
 	        shellinabox/root_page.h     				      \

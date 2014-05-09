@@ -646,7 +646,7 @@ void destroyUtmp(struct Utmp *utmp) {
         updwtmpx("/var/log/wtmp", &utmp->utmpx);
       }
 #endif
-      
+
       // Switch back to the lower privileges
       check(!setresgid(r_gid, e_gid, s_gid));
       check(!setresuid(r_uid, e_uid, s_uid));
@@ -1546,7 +1546,7 @@ static void childProcess(struct Service *service, int width, int height,
   // Change user and group ids
   check(!setresgid(service->gid, service->gid, service->gid));
   check(!setresuid(service->uid, service->uid, service->uid));
-  
+
   // Change working directory
   if (service->useHomeDir) {
     check(!service->useLogin);
