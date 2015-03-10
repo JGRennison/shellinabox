@@ -2731,7 +2731,7 @@ VT100.prototype.handleKey = function(event) {
       case 144: /* Num Lock     */                                      return;
       case 145: /* Scroll Lock  */                                      return;
       case 186: /* ;            */ ch = this.applyModifiers(59, event); break;
-      case 187: /* =            */ ch = this.applyModifiers(61, event); break;
+      //case 187: /* =            */ ch = this.applyModifiers(61, event); break;
       case 188: /* ,            */ ch = this.applyModifiers(44, event); break;
       case 189: /* -            */ ch = this.applyModifiers(45, event); break;
       case 190: /* .            */ ch = this.applyModifiers(46, event); break;
@@ -2925,6 +2925,7 @@ VT100.prototype.keyDown = function(event) {
     event.keyCode >= 109 && event.keyCode <= 111 ||
     event.keyCode >= 160 && event.keyCode <= 192 ||
     event.keyCode >= 219 && event.keyCode <= 223 ||
+    event.keyCode == 229 ||
     event.keyCode == 252;
   try {
     if (navigator.appName == 'Konqueror') {
